@@ -28,6 +28,15 @@
             if-layers = <1 2>;
             then-layer = <3>;
         };
+    }; 
+
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <24 27>;
+            bindings = <&kp COLON>;
+        };
     };
     
     keymap {
@@ -39,7 +48,7 @@
             &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │  O       │
-            HRML(A,        R,         S,         T)     &kp G          &kp M      HRMR(N,        E,         I,        O)
+            HRML(A,        R,         S,         T)     &lt 5 G         &lt 5 M   HRMR(N,        E,         I,        O)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
@@ -54,7 +63,7 @@
 &kp F1        &kp F2        &kp F3        &kp F4        &kp F5     &kp F6        &kp F7    &kp F8   &kp F9        &kp F10
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5     &kp NUMBER_6  &kp N7    &kp N8   &kp NUMBER_9  &kp N0
 &caps_word        &kp GRAVE     &kp AT_SIGN   &kp MINUS     &kp EQUAL  &kp TILDE     &kp HASH  &trans  &trans      &kp ENTER
-                                          &kp TAB        &kp ESC     &trans        &kp ESC
+                                          &kp TAB        &kp DELETE    &trans        &kp ESC
             >; 
         };
 
@@ -98,6 +107,15 @@
 &kp MINUS   &kp EQUAL    &kp PLUS  &kp UNDER   &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
 &caps_word  &trans       &trans    &trans      &kp QUESTION       &kp SLASH         &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp EXCL          &trans
                                    &kp TAB     &kp ESCAPE         &kp ENTER         &trans
+            >;
+        };
+
+    nav {
+            bindings = <
+&kp ESC           &kp F1        &kp F2            &kp F3          &kp F4         &kp PAGE_UP     &mkp MB1        &mkp MB2      &kp END       &kp F1
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp LEFT_SHIFT  &kp PG_UP      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT     &kp DELETE
+&kp LG(Z)         &kp LG(X)     &kp LG(C)         &kp LG(V)       &kp PAGE_DOWN  &kp PAGE_DOWN   &kp C_MUTE      &kp C_VOL_DN  &kp C_VOL_UP  &to 4
+                                                  &to 0           &trans         &trans          &trans
             >;
         };
     };
