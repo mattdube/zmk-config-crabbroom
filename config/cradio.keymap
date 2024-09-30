@@ -37,6 +37,11 @@
             key-positions = <23 26>;
             bindings = <&kp COLON>;
         };
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&kp ESC>;
+        };
     };
     
     keymap {
@@ -53,7 +58,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &lt 1 BSPC    &lt 4 SPACE  &lt 1 ESC
+                                            &lt 2 TAB   &lt 1 BSPC    &lt 4 SPACE  &lt 1 ENTER
         //                                 ╰──────────┴──────────╯      ╰──────────┴──────────╯
             >;
         };
